@@ -2,7 +2,7 @@ const request = require("supertest");
 const app = require("./app");
 const { MongoClient } = require('mongodb');
 
-const mongoURI = 'mongodb+srv://user:user@cluster0.dejij.mongodb.net/CheckoutAPI?retryWrites=true&w=majority'
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/A2api'
 
 async function testDailyReportPost(name, body, expectStatus, expectOutput) {
     const url = '/daily_reports/' + name
