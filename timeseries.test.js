@@ -2,7 +2,7 @@ const request = require("supertest");
 const app = require("./app");
 const { MongoClient } = require('mongodb');
 
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/A2api'
+const mongoURI = "mongodb+srv://user:user@cluster0.dejij.mongodb.net/CheckoutAPI?retryWrites=true&w=majority"
 
 
 async function testTimeSeriesPost(timeseries_name, data_type, body, expectStatus, expectOutput) {
