@@ -7,11 +7,12 @@ orbs:
   node: circleci/node@4.7
 
 jobs:
-  nodejs:
+  mongodb:
     docker:
-      - image: 'circleci/node:latest'
+      - image: 'circleci/mongodb:latest'
     steps:
       - checkout
+      - node/install-packages
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
