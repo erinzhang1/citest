@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "test": "jest --watchAll",
+    "start": "node server.js"
+  },
+  "preset": "@shelf/jest-mongodb",
+  "dependencies": {
+    "@shelf/jest-mongodb": "^2.2.1",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.7",
+    "node-fetch": "^3.2.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^27.5.1",
+    "superagent": "^7.1.1",
+    "supertest": "^6.2.2"
+  }
+}
