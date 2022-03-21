@@ -2,6 +2,8 @@ const request = require("supertest");
 const app = require("./app");
 const { MongoClient } = require('mongodb');
 
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/A2api'
+
 async function testDailyReportPost(name, body, expectStatus, expectOutput) {
     const url = '/daily_reports/' + name
 
@@ -75,7 +77,7 @@ describe('Daily Reports get test', () => {
     let connection;
 
     beforeAll(async () => {
-        connection = await MongoClient.connect('mongodb://localhost:27017/A2api', {
+        connection = await MongoClient.connect(mongoURI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
